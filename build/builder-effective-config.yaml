@@ -1,0 +1,41 @@
+directories:
+  output: build
+  buildResources: build
+productName: Mark Studio
+appId: cn.developer.cuiwang.datasmark
+publish:
+  provider: generic
+  url: http://datasmark.youdongtai.com/files/
+files:
+  - filter:
+      - dist/electron/**/*
+dmg:
+  contents:
+    - x: 410
+      'y': 150
+      type: link
+      path: /Applications
+    - x: 130
+      'y': 150
+      type: file
+mac:
+  icon: build/icons/icon.icns
+  target:
+    - dmg
+    - zip
+win:
+  icon: build/icons/icon.ico
+  target:
+    - nsis
+    - zip
+linux:
+  icon: build/icons
+  target: deb
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  allowElevation: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: Mark Studio
+electronVersion: 9.4.4
